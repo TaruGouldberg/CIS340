@@ -1,101 +1,29 @@
 import React from 'react';
-import { Text, Image, ScrollView } from 'react-native';
+import { Text, View, SectionList } from 'react-native';
 
-const dog = {
-  uri: 'https://raw.githubusercontent.com/AbdunabiRamadan/CIS340/master/images/dog2.png',
-  width: 64,
-  height: 64
-};
-
-export default MyScrollViewApp = () => (  
-    
-    <ScrollView style={{padding: 40}}>
-      <Text style={{fontSize: 80}}>Try to scroll down</Text>
-      <Image source={require('./assets/dog.png')} style={{width: 80, height: 80}} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Text style={{fontSize: 80}}>Try to scroll down again, if you like</Text>
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Text style={{fontSize: 80}}>Keep Going!</Text>
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Text style={{fontSize: 80}}>Almost there...</Text>
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Text style={{fontSize: 80}}>Just a little more</Text>
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Image source={dog} />
-      <Text style={{fontSize: 80}}>You did it, I'm so proud</Text>
-    </ScrollView>
-  );
+export default StatesApp = () => {
+  return(
+    <View style={{flex: 1, paddingTop:22}}>
+      <SectionList
+          section={[
+            {title: 'A', data : ['Alabama','Alaska','Arkansas']},
+            {title: 'C', data : ['California','Colorado','Connecticut']},
+            {title: 'D', data : ['Delaware']},
+            {title: 'F', data : ['Florida']},
+            {title: 'G', data : ['Georgia']},
+            {title: 'H', data : ['Hawaii']},
+            
+          ]}
+          returnItem={({item}) => <Text style={{padding: 10, fontSize: 20, height: 44 }}> {item} </Text>}
+          renderSectionHeader={({section}) => <Text style={{paddingTop: 4, paddingLeft: 10,
+          paddingRight: 10,
+          paddingBottom: 4,
+          fontSize: 14,
+          fontWeight: 'bold',
+          backgroundColor: '#9FA8DA'}}>{section.title}</Text>}// set your custom color
+          keyExtractor={(item,index) => index}
+      />
+    </View>
+  );// end of return
+}
 
